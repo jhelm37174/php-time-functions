@@ -11,7 +11,7 @@
   "disallowTrailingComma": true,
   "disallowYodaConditions": true,
 
-  "maximumLineLength": 150,
+  "maximumLineLength": 80,
 
   "safeContextKeyword": ["_this"],
 
