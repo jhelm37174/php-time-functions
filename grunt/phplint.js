@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   return {
 
     options: {
-      swapPath: '/tmp'
+      swapPath: './tmp'
     },
     all: ['src/*.php']
   };
