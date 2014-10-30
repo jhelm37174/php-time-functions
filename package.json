@@ -32,7 +32,6 @@
     "grunt-githooks": "^0.3.1",
     "grunt-jscs": "^0.8.1",
     "grunt-php": "^1.1.1",
-    "grunt-php-analyzer": "^0.1.0",
     "grunt-phpcs": "^0.2.3",
     "grunt-phplint": "0.0.5",
     "grunt-phpunit": "^0.3.6",
