@@ -12,11 +12,13 @@ function getworkinghours($timeOne,$timeTwo)
 /*
 Notes on this function:
 ______________________________________________________________________________
-This script uses the ISO standard numeric assignment for days - 0 = sunday and 6 = saturday so we assume counting 1-5. Change to include saturday if you want!
+This script uses the ISO standard numeric assignment for days - 0 = sunday and 6 = saturday so we assume counting 1-5.
 
-The idea here is to split the date range in to individual days - first day (t1 date) starting at 00:00 and end day (t2 date) ending at 23:59
+The idea here is to split the date range in to individual days - first day (timeOne date) starting
+at 00:00 and end day (timeTwo date) ending at 23:59
 
-We can then look at each day through an array, and apply logic to count. Note that all calculations are using seconds - not other units!
+We can then look at each day through an array, and apply logic to count. Note that all calculations
+are using seconds - not other units!
 
 */
 define('DAY_WORK', 30600); // 8.5h * 60m * 60s -> number of seconds in a working day
