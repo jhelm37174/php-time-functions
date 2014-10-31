@@ -10,7 +10,6 @@
     "require": true,
     "chai": true,
     "sinon": true,
-    "concatname": true,
     "expect" : true,
     "History": true,
     "module": true,
