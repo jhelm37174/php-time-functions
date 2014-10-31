@@ -35,8 +35,8 @@ define('HOUR_END_DAY', '17:30:00');
  * Saturdays and Sundays are excluded as working days, 
  *
  * 
- * @param  string $timeOne a Unix timestamp - e.g. 1414666350
- * @param  string $timeTwo a Unix timestamp - e.g. 1414666390 - second must be
+ * @param  int $timeOne a Unix timestamp - e.g. 1414666350
+ * @param  int $timeTwo a Unix timestamp - e.g. 1414666390 - second must be
  * greater than the first
  * @return int time in seconds
  */
