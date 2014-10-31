@@ -65,7 +65,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">2</span>
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -92,7 +92,7 @@
             <div class="accordion-heading">
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1968267085" class="accordion-body collapse in">
+            <div id="namespace-1404575079" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -256,35 +256,28 @@ e.g. 09:00 in 24 hr format.</em></p>
 
                                         <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_getworkinghours" name="method_getworkinghours" class="anchor"></a>
+            <a id="method_beautifytime" name="method_beautifytime" class="anchor"></a>
             <article class="method">
-                <h3 class=" ">getworkinghours()</h3>
+                <h3 class=" ">beautifytime()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getworkinghours(int <span class="argument">$timeOne</span>, int <span class="argument">$timeTwo</span>) : int</pre>
-                <p><em>The GetWorkingHours function accepts two timestamp inputs and returns a
-time in seconds. It calculates this by splitting the date range provided
-in $timeOne and $timeTwo in to days and then loop each day through an array.</em></p>
-                <p>Saturdays and Sundays are excluded as working days,</p>
+                <pre class="signature" style="margin-right: 54px;">beautifytime(int <span class="argument">$timestring</span>) : string</pre>
+                <p><em>The beautifytime function takes a timestamp (seconds) and converts it to
+a more friendly view - e.g. 3600 is returned as 1h.</em></p>
+                
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>int</td>
-                                <td>$timeOne</td>
+                                <td>$timestring</td>
                                 <td><p>a Unix timestamp - e.g. 1414666350</p></td>
-                            </tr>
-                                                    <tr>
-                                <td>int</td>
-                                <td>$timeTwo</td>
-                                <td><p>a Unix timestamp - e.g. 1414666390 - second must be
-greater than the first</p></td>
                             </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
-                    int
-                                            &mdash; <p>time in seconds</p>
+                    string
+                                            &mdash; <p>pretty time</p>
                                                 </article>
         </div>
         <aside class="span4 detailsbar">
@@ -315,27 +308,36 @@ greater than the first</p></td>
 
                                         <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_beautifytime" name="method_beautifytime" class="anchor"></a>
+            <a id="method_getworkinghours" name="method_getworkinghours" class="anchor"></a>
             <article class="method">
-                <h3 class=" ">beautifytime()</h3>
+                <h3 class=" ">getworkinghours()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">beautifytime( <span class="argument">$timestring</span>)</pre>
-                <p><em>Beautify time function.</em></p>
-                <p>This file contains a single function - which takes a time stamp and
-formats it in a reader friendly format. For example, 1414666350 may
-be returned in a more friendly view of 3d, 15m and 45s.</p>
+                <pre class="signature" style="margin-right: 54px;">getworkinghours(int <span class="argument">$timeOne</span>, int <span class="argument">$timeTwo</span>) : int</pre>
+                <p><em>The GetWorkingHours function accepts two timestamp inputs and returns a
+time in seconds. It calculates this by splitting the date range provided
+in $timeOne and $timeTwo in to days and then loop each day through an array.</em></p>
+                <p>Saturdays and Sundays are excluded as working days,</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
-                                <td>$timestring</td>
-                                <td></td>
+                                <td>int</td>
+                                <td>$timeOne</td>
+                                <td><p>a Unix timestamp - e.g. 1414666350</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$timeTwo</td>
+                                <td><p>a Unix timestamp - e.g. 1414666390 - second must be
+greater than the first</p></td>
                             </tr>
                                             </table>
                 
                 
-                            </article>
+                                    <h4>Returns</h4>
+                    int
+                                            &mdash; <p>time in seconds</p>
+                                                </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -403,7 +405,7 @@ be returned in a more friendly view of 3d, 15m and 45s.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 31st, 2014 at 08:56.
+                    on October 31st, 2014 at 08:59.
                 </section>
             </section>
         </section>

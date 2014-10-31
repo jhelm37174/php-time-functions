@@ -7,6 +7,16 @@
  * be returned in a more friendly view of 3d, 15m and 45s.
  *
  */
+
+
+/**
+ * The beautifytime function takes a timestamp (seconds) and converts it to
+ * a more friendly view - e.g. 3600 is returned as 1h.
+ *
+ * 
+ * @param  int $timestring a Unix timestamp - e.g. 1414666350
+ * @return string pretty time
+ */
 function beautifytime($timestring)
 {
 //returns a pretty time - timestring in seconds
