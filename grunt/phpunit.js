@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             },
             options: {
                 bin: 'phpunit',
-                bootstrap: 'src/getworkinghours.php',
+                bootstrap: 'tests/bootstrap.php',
                 colors: true,
                 testdox: true
             }
