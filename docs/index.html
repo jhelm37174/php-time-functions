@@ -65,12 +65,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="reports/errors.html">
-                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="reports/markers.html">
-                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                         </ul>
@@ -92,7 +92,7 @@
             <div class="accordion-heading">
                                 <a href="namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1258076369" class="accordion-body collapse in">
+            <div id="namespace-960243199" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -142,8 +142,8 @@
             <article id="constant_DAY_WORK" class="constant">
                 <h3 class="">DAY_WORK</h3>
                 <pre class="signature">DAY_WORK</pre>
-                <p><em>The DAY_WORK represents the number of working seconds in a day. e.g. 8.5 hour working day is 30600 seconds.</em></p>
-                
+                <p><em>The DAY_WORK represents the number of working seconds in a day.</em></p>
+                <p>e.g. 8.5 hour working day is 30600 seconds.</p>
             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -178,7 +178,8 @@
             <article id="constant_HOUR_START_DAY" class="constant">
                 <h3 class="">HOUR_START_DAY</h3>
                 <pre class="signature">HOUR_START_DAY</pre>
-                <p><em>The HOUR_START_DAY represents the start of the working day - e.g. 09:00 in 24 hr format.</em></p>
+                <p><em>The HOUR_START_DAY represents the start of the working day -
+e.g. 09:00 in 24 hr format.</em></p>
                 
             </article>
         </div>
@@ -214,7 +215,8 @@
             <article id="constant_HOUR_END_DAY" class="constant">
                 <h3 class="">HOUR_END_DAY</h3>
                 <pre class="signature">HOUR_END_DAY</pre>
-                <p><em>The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in 24 hr format.</em></p>
+                <p><em>The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in
+24 hr format.</em></p>
                 
             </article>
         </div>
@@ -254,57 +256,6 @@
 
                                         <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_newone" name="method_newone" class="anchor"></a>
-            <article class="method">
-                <h3 class=" ">newone()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">newone(int <span class="argument">$a</span>) : int</pre>
-                <p><em>testing</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>int</td>
-                                <td>$a</td>
-                                <td><p>an integer</p></td>
-                            </tr>
-                                            </table>
-                
-                
-                                    <h4>Returns</h4>
-                    int
-                                            &mdash; <p>the square of $a</p>
-                                                </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                    <dt>File</dt>
-                    <dd><a href=""><div class="path-wrapper"></div></a></dd>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr>
-                        <th>
-                            subpackage
-                        </th>
-                        <td>
-                                                    </td>
-                    </tr>
-                                    <tr>
-                        <th>
-                            todo
-                        </th>
-                        <td>
-                                                    </td>
-                    </tr>
-                            </table>
-        </aside>
-    </div>
-
-                                        <div class="row-fluid">
-        <div class="span8 content class">
             <a id="method_getworkinghours" name="method_getworkinghours" class="anchor"></a>
             <article class="method">
                 <h3 class=" ">getworkinghours()</h3>
@@ -320,12 +271,13 @@ in $timeOne and $timeTwo in to days and then loop each day through an array.</em
                                                     <tr>
                                 <td>string</td>
                                 <td>$timeOne</td>
-                                <td><p>a UTC timestamp</p></td>
+                                <td><p>a Unix timestamp - e.g. 1414666350</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
                                 <td>$timeTwo</td>
-                                <td><p>a UTC timestamp</p></td>
+                                <td><p>a Unix timestamp - e.g. 1414666390 - second must be
+greater than the first</p></td>
                             </tr>
                                             </table>
                 
@@ -401,7 +353,7 @@ in $timeOne and $timeTwo in to days and then loop each day through an array.</em
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 31st, 2014 at 03:19.
+                    on October 31st, 2014 at 08:03.
                 </section>
             </section>
         </section>

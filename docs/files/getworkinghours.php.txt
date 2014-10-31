@@ -2,25 +2,29 @@
 /**
  * Get Working Time function.
  *
- * This file contains a single function - get working time. This function is useful if
- * you need to calculate how long a specific task has been open during working time.
- * For example, if you work in a service desk, and you need to review all the tickets 
- * to see which has been open for more than X hours during your normal office hours so that
- * you can prioritize work.
+ * This file contains a single function - get working time. This function is 
+ * useful if you need to calculate how long a specific task has been open 
+ * during working time. For example, if you work in a service desk, and 
+ * you need to review all the tickets to see which has been open for more 
+ * than X hours during your normal office hours so that you can prioritize
+ * work.
  *
  */
 
 
 /**
- * The DAY_WORK represents the number of working seconds in a day. e.g. 8.5 hour working day is 30600 seconds.
+ * The DAY_WORK represents the number of working seconds in a day.
+ * e.g. 8.5 hour working day is 30600 seconds.
  */
 define('DAY_WORK', 30600);
 /**
- * The HOUR_START_DAY represents the start of the working day - e.g. 09:00 in 24 hr format.
+ * The HOUR_START_DAY represents the start of the working day -
+ * e.g. 09:00 in 24 hr format.
  */
 define('HOUR_START_DAY', '09:00:00');
 /**
- * The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in 24 hr format.
+ * The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in
+ * 24 hr format.
  */
 define('HOUR_END_DAY', '17:30:00');
 
@@ -31,8 +35,9 @@ define('HOUR_END_DAY', '17:30:00');
  * Saturdays and Sundays are excluded as working days, 
  *
  * 
- * @param  string $timeOne a UTC timestamp
- * @param  string $timeTwo a UTC timestamp
+ * @param  string $timeOne a Unix timestamp - e.g. 1414666350
+ * @param  string $timeTwo a Unix timestamp - e.g. 1414666390 - second must be
+ * greater than the first
  * @return int time in seconds
  */
 function getworkinghours($timeOne, $timeTwo)
@@ -41,21 +46,22 @@ function getworkinghours($timeOne, $timeTwo)
 /*
 Notes on this function:
 ______________________________________________________________________________
-This script uses the ISO standard numeric assignment for days - 0 = sunday and 6 = saturday so we assume counting 1-5.
+This script uses the ISO standard numeric assignment for days - 0 = sunday and 
+6 = saturday so we assume counting 1-5.
 
-The idea here is to split the date range in to individual days - first day (timeOne date) starting
-at 00:00 and end day (timeTwo date) ending at 23:59
+The idea here is to split the date range in to individual days - first day 
+(timeOne date) starting at 00:00 and end day (timeTwo date) ending at 23:59
 
-We can then look at each day through an array, and apply logic to count. Note that all calculations
-are using seconds - not other units!
+We can then look at each day through an array, and apply logic to count. 
+Note that all calculations are using seconds - not other units!
 
 */
 
 
 
     //create an array of days covering the time period t1 to t2
-    $startperiod = new datetime(gmdate("Y-m-d 00:00:00", $timeOne)); //this should be midnight on start date
-    $endperiod = new datetime(gmdate("Y-m-d 23:59:59", $timeTwo));  //this should be the end date
+    $startperiod = new datetime(gmdate("Y-m-d 00:00:00", $timeOne));
+    $endperiod = new datetime(gmdate("Y-m-d 23:59:59", $timeTwo));
     $interval = new DateInterval('P1D');
     $period = new DatePeriod($startperiod, $interval, $endperiod);
 
@@ -73,9 +79,11 @@ are using seconds - not other units!
 
             //step 1: //for the first working day!!!!
             if ($date->format('Y-m-d') == gmdate('Y-m-d', $timeOne)) {
-              if ($timeOne > $startofworkingday  && $timeTwo < $endofworkingday) {
+              if ($timeOne > $startofworkingday  &&
+                $timeTwo < $endofworkingday) {
                 $timespent = $timespent + $timeTwo - $timeOne;
-              } elseif ($timeOne > $startofworkingday && $timeTwo > $endofworkingday && $timeOne < $endofworkingday) {
+              } elseif ($timeOne > $startofworkingday &&
+                $timeTwo > $endofworkingday && $timeOne < $endofworkingday) {
                 $timespent = $timespent + $endofworkingday - $timeOne;
               } else {
                 $timespent = $timespent + 0;
@@ -90,11 +98,13 @@ are using seconds - not other units!
 
             //step 3 - counting the final day
             if ($date->format('Y-m-d') == gmdate('Y-m-d', $timeTwo) && 
-                 gmdate('Y-m-d', $timeOne) != gmdate('Y-m-d', $timeTwo)) {
-              if ($timeTwo > $startofworkingday && $timeTwo < $endofworkingday) {
-                    $timespent = $timespent + $timeTwo - $startofworkingday;
-              } elseif ($timeTwo > $startofworkingday && $timeTwo > $endofworkingday) {
-                    $timespent = $timespent + DAY_WORK;
+              gmdate('Y-m-d', $timeOne) != gmdate('Y-m-d', $timeTwo)) {
+              if ($timeTwo > $startofworkingday &&
+                $timeTwo < $endofworkingday) {
+                $timespent = $timespent + $timeTwo - $startofworkingday;
+              } elseif ($timeTwo > $startofworkingday &&
+                $timeTwo > $endofworkingday) {
+                $timespent = $timespent + DAY_WORK;
               }
             }
         }

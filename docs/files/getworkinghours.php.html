@@ -113,12 +113,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                         </ul>
@@ -140,7 +140,7 @@
             <div class="accordion-heading">
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1927157740" class="accordion-body collapse in">
+            <div id="namespace-2144198322" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -163,11 +163,12 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
                     <h1><small></small>getworkinghours.php</h1>
                     <p><em>Get Working Time function.</em></p>
-                    <p>This file contains a single function - get working time. This function is useful if
-you need to calculate how long a specific task has been open during working time.
-For example, if you work in a service desk, and you need to review all the tickets
-to see which has been open for more than X hours during your normal office hours so that
-you can prioritize work.</p>
+                    <p>This file contains a single function - get working time. This function is
+useful if you need to calculate how long a specific task has been open
+during working time. For example, if you work in a service desk, and
+you need to review all the tickets to see which has been open for more
+than X hours during your normal office hours so that you can prioritize
+work.</p>
 
                     
                     
@@ -201,8 +202,8 @@ you can prioritize work.</p>
             <article id="constant_DAY_WORK" class="constant">
                 <h3 class="">DAY_WORK</h3>
                 <pre class="signature">DAY_WORK</pre>
-                <p><em>The DAY_WORK represents the number of working seconds in a day. e.g. 8.5 hour working day is 30600 seconds.</em></p>
-                
+                <p><em>The DAY_WORK represents the number of working seconds in a day.</em></p>
+                <p>e.g. 8.5 hour working day is 30600 seconds.</p>
             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -237,7 +238,8 @@ you can prioritize work.</p>
             <article id="constant_HOUR_START_DAY" class="constant">
                 <h3 class="">HOUR_START_DAY</h3>
                 <pre class="signature">HOUR_START_DAY</pre>
-                <p><em>The HOUR_START_DAY represents the start of the working day - e.g. 09:00 in 24 hr format.</em></p>
+                <p><em>The HOUR_START_DAY represents the start of the working day -
+e.g. 09:00 in 24 hr format.</em></p>
                 
             </article>
         </div>
@@ -273,7 +275,8 @@ you can prioritize work.</p>
             <article id="constant_HOUR_END_DAY" class="constant">
                 <h3 class="">HOUR_END_DAY</h3>
                 <pre class="signature">HOUR_END_DAY</pre>
-                <p><em>The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in 24 hr format.</em></p>
+                <p><em>The HOUR_END_DAY represents the end of the working day - e.g. 18:00 in
+24 hr format.</em></p>
                 
             </article>
         </div>
@@ -328,12 +331,13 @@ in $timeOne and $timeTwo in to days and then loop each day through an array.</em
                                                     <tr>
                                 <td>string</td>
                                 <td>$timeOne</td>
-                                <td><p>a UTC timestamp</p></td>
+                                <td><p>a Unix timestamp - e.g. 1414666350</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
                                 <td>$timeTwo</td>
-                                <td><p>a UTC timestamp</p></td>
+                                <td><p>a Unix timestamp - e.g. 1414666390 - second must be
+greater than the first</p></td>
                             </tr>
                                             </table>
                 
@@ -419,7 +423,7 @@ in $timeOne and $timeTwo in to days and then loop each day through an array.</em
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 31st, 2014 at 03:19.
+                    on October 31st, 2014 at 08:03.
                 </section>
             </section>
         </section>
