@@ -1,0 +1,56 @@
+<?php
+/**
+ * Beautify time function.
+ *
+ * This file contains a single function - which takes a time stamp and 
+ * formats it in a reader friendly format. For example, 1414666350 may
+ * be returned in a more friendly view of 3d, 15m and 45s.
+ *
+ */
+function beautifytime($timestring)
+{
+//returns a pretty time - timestring in seconds
+$bhours = gmdate("H", $timestring);
+$bmins = gmdate("i", $timestring);
+$bseconds = gmdate("s", $timestring);
+$bdays = gmdate("d", $timestring);
+$bmonth = gmdate("m", $timestring);
+$byear = gmdate("Y", $timestring);
+
+settype($bseconds, "integer");
+settype($bmins, "integer");
+settype($bhours, "integer");
+settype($bdays, "integer");
+settype($bmonth, "integer");
+settype($byear, "integer");
+
+//for hours, mins and seconds
+if ($bhours ==0) {
+  if ($bmins ==0) {
+    $btime = $bseconds . "s";
+  } else {
+    $btime = $bmins . "m " . $bseconds . "s";
+  }
+} else {
+  $btime = $bhours . "h " . $bmins . "m " . $bseconds . "s";
+}
+
+if ($bdays > 1) {
+  $bdays = $bdays - 1;
+  $bhours = $bhours + (24*$bdays);
+  $btime =  $bhours . "h " . $bmins . "m " . $bseconds . "s";
+}
+if ($bmonth > 1) {
+  $bmonth = $bmonth - 1;
+  $bhours = $bhours + (30*$bmonth*24);
+  $btime =  $bhours . "h " . $bmins . "m " . $bseconds . "s";
+}
+
+if ($byear > 1) {
+  $byear = $byear - 1970;
+  $bhours = $bhours + (365.25*$byear*24);
+  $btime =  $bhours . "h " . $bmins . "m " . $bseconds . "s";
+}
+
+return $btime;
+}
