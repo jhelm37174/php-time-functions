@@ -6,7 +6,8 @@ module.exports = function (grunt) {
     },
     options: {
         bin: 'phpcs',
-        standard: 'Zend'
+        standard: 'Zend',
+        warningSeverity: 'Warning'
     }
 
   };
