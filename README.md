@@ -13,10 +13,9 @@ Grunt tasks are included for
 - PHP code style checking (PHPCS) using grunt-phpcs
 - Generating documentation with PHPDocumentor using grunt-phpdocumentor
 - Linting the PHP files using grunt-phplint
+- Unit testing the PHP files using grunt-phpunit
 
 In progress
 ==================
-
-The PHPUnit tests and associated grunt tasks are incomplete.
 
 The Getworkinghours file contains several warnings from the PHPCS, but no errors.
