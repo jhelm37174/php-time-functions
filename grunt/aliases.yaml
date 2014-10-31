@@ -1,8 +1,7 @@
 default:
- - 'phpcs'
- - 'php'
  - 'phplint'
  - 'jscs'
  - 'jshint'
  - 'phpdocumentor'
+ - 'phpcs'
 
